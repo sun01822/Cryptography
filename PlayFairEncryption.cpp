@@ -75,23 +75,30 @@ int main()
     cout << "Enter Plain Text(capital letter): ";
     getline(cin, plainText);
     vector<string> store;
-    for(int i=0; i<plainText.size(); )
+    for (int i = 0; i < plainText.size();)
     {
         string temp = "";
-        if(plainText[i]==plainText[i+1])
+        if (i == plainText.size() - 1)
         {
-            temp+=plainText[i];
-            temp+='X';
+            temp += plainText[i];
+            temp += 'X';
+            i++;
+        }
+        else if (plainText[i] == plainText[i + 1])
+        {
+            temp += plainText[i];
+            temp += 'X';
             i++;
         }
         else
         {
-            temp+=plainText[i];
-            temp+=plainText[i+1];
-            i+=2;
+            temp += plainText[i];
+            temp += plainText[i + 1];
+            i += 2;
         }
         store.push_back(temp);
     }
+
 
     string cipherText = "";
     for(auto i:store)
