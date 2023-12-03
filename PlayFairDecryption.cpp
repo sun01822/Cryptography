@@ -16,12 +16,18 @@ int main()
     used[9] = true;
     cout << "Enter a key(capital letter): ";
     getline(cin, key);
+//    cout << "Key is: " << key << endl;
+    for(int i=0; i<key.size(); i++){
+        if(key[i]=='J'){
+            key[i] = 'I';
+        }
+    }
     cout << "Key is: " << key << endl;
     int rotation = 0;
     bool flag = false;
     for(int i=0; i<5; i++)
     {
-        for(int j=0; j<5; j++)
+        for(int j=0; j<5;)
         {
             if(rotation==key.size())
             {
@@ -33,6 +39,7 @@ int main()
             {
                 v[i][j] = temp;
                 used[temp] = true;
+                j++;
             }
             rotation++;
         }
@@ -70,6 +77,7 @@ int main()
         }
         cout << endl;
     }
+
 
 
     string cipherText;
