@@ -9,8 +9,7 @@ vector<vector<int>> v(5, vector<int>(5, -1));
 
 string decryption(string);
 
-int main()
-{
+int main(){
     string key;
     used[9] = true;
     cout << "Enter a key(capital letter): ";
