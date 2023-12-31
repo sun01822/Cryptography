@@ -51,7 +51,8 @@ string decryptionVigenere(string cipherText, int arr[],int len){
     int counter = 0;
     int i = 0;
     while(sizeInput){
-        int temp = (cipherText[i] - 'A' - arr[i]);
+        cout << "arr[" << counter << "] = " << arr[counter] << endl;
+        int temp = (cipherText[i] - 'A' - arr[counter]);
         if(temp < 0){
             temp += 26;
         }
